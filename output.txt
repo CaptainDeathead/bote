@@ -1,0 +1,1046 @@
+`Plazma Python Code Compilation:`
+```#bot host commands and imports
+
+
+
+from keep_alive import keep_alive
+import discord
+import os 
+from discord.ext import commands
+import random
+import discord
+import random
+from discord import FFmpegPCMAudio
+
+import chess
+import engine
+import utils
+import asyncio
+import flask
+from threading import Thread
+import requests
+import json
+import datetime
+import pytz
+import wavelink
+
+
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix="?", intents=intents)
+ 
+
+@bot.event
+
+async def on_ready():
+    game = discord.Game("Sex with hitler 2077")
+    await bot.change_presence(status=discord.Status.idle, activity=game)
+    print(f"Logged in as {bot.user.name}")
+
+    try:
+
+      synced = await bot.tree.sync()
+
+      print(f"Synced {len(synced)} command(s)")
+
+    except Exception as e:
+
+      print(e)
+    bot.loop.create_task(node_connect())
+
+#first version release version 1.0 
+
+
+@bot.tree.command(name="goodbye")
+async def goodbye(interaction: discord.Interaction):
+  await interaction.response.send_message("Goodbye! I hope you have a great rest of your day!")
+
+@bot.tree.command(name="hello")
+async def hello(interaction: discord.Interaction):
+  await interaction.response.send_message("Hello! How are you today! 🙂")
+
+@bot.tree.command(name="who-creator")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("My creator is Osama Bin Collection he also goes by Ruxless and Big Booty Latinas")
+
+#update 1.1 release.
+#added 3 slash commands
+
+@bot.tree.command(name="who-vote-for")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("You should vote for the OBP or the One Booty Party for a better server")
+
+@bot.tree.command(name="how-are-you")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("Im doing great today, thanks for asking. How are things with you?")
+
+@bot.tree.command(name="kill-yourself")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("I appriciate this message, thank you for telling me to keep myself safe, this means alot!")
+
+# update 1.2 release.
+#added 5 slash commands
+
+@bot.tree.command(name="september")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("September 11 attacks. September 11 attacks, also called 9/11 attacks, series of airline hijackings and suicide attacks committed in 2001 by 19 militants associated with the Islamic extremist group al-Qaeda against targets in the United States, the deadliest terrorist attacks on American soil in U.S. history.")
+
+@bot.tree.command(name="who-helped-in-project")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("While working on this bot, I was helped by Yesn't to fix bugs and make the first realease.")
+
+@bot.tree.command(name="asian-parent")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("YOU FALIURE, COUSIN JIMMY IS ONLY 3 AND HE BETTER THEN YOU. HE HAVE DOCTORATE YOU HAVENT GOTTEN A+++++. YOU STUUUUPID. YOU DUMB. YOU WASTE OF AIR FALIURE.")
+
+@bot.tree.command(name="current-version")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("This bot is currently on version 1.12.1 as of 31/8/23.")
+
+@bot.tree.command(name="did-epstein-kill-himself")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("Jeffery epstein did not kill himself.")
+
+#update 1.3 release.
+#added 3 slash commands
+
+@bot.tree.command(name="sponser")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("This bot is proudly sponsered by Raid Shadow Legends. Raid shadow legends is a free MMO RPG game free on the apple app store and google play store available on all phones. You can claim up to 15000 gold if you sign up using my creator code BigBootyLatinas to gain a head start and beat your opponents.")
+
+@bot.tree.command(name="countries-of-the-world")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("https://youtu.be/x88Z5txBc7w?si=q_F4He5AdN_C-KSZ")
+
+#update 1.3.1 patch
+#spelling mistake
+
+@bot.tree.command(name="best-country")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("The best country in the world is The United Kingdom of Great Britain and Northern Ireland")
+
+@bot.tree.command(name="god-save-our")
+async def god(interaction: discord.Interaction):
+  await interaction.response.send_message("gracious King. Long live our noble King. God save the King.Send him victorious, Happy and glorious, Long to reign over us, God save the King. Thy choicest gifts in store. On him be pleased to pour, Long may he reign. May he defend our laws, And ever give us cause, To sing with heart and voice, God save the King.")
+
+@bot.tree.command(name="who-is-the-best-kitty")
+async def god(interaction: discord.Interaction):
+  await interaction.response.send_message("TONY is the goodest kitty around. TONY is life.")
+
+
+
+#update 1.11.1
+#god save the king
+
+@bot.tree.command(name="god-save-the-king")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("God save our gracious King. Long live our noble King. God save the King.Send him victorious, Happy and glorious, Long to reign over us, God save the King. Thy choicest gifts in store. On him be pleased to pour, Long may he reign. May he defend our laws, And ever give us cause, To sing with heart and voice, God save the King.")
+
+
+#update 1.4 release
+#added former british colonies command
+
+
+# A list of former British colonies and their colonial names
+former_british_colonies = {
+    'united States': 'british america',
+    'canada': 'british north america',
+    'australia': 'the commonwealth of australia',
+    'new zealand': 'auckland island',
+    'india': 'british raj',
+    'pakistan': 'british india',
+    'bangladesh': 'east bengal',
+    'nigeria': 'nigerian protectorate',
+    'kenya': 'british east africa',
+    'ghana': 'gold coast',
+  'sudan': 'anglo-egyptian sudan',
+  'lesotho': 'basutoland',
+  'botswana': 'botswana',
+  'brunei': 'british borneo',
+  'uganda': ' british east africa',
+  'egypt': 'british egypt',
+  'belize': 'british honduras',
+  'malaysia': 'british malaya',
+  'somalia': 'british somaliland',
+  'togo': 'british togoland',
+  'sri lanka': 'ceylon',
+  'israel': 'palestine protectorate',
+  'zambia': 'northern rhodesia',
+  'zimbabwe': 'southern rhodesia',
+  'wa': 'the swan river colony',
+  'western australia': 'the swan river colony',
+  'tanzania': 'tanganyika territory',
+  'usa': 'the thirteen colonies',
+  'singapore': 'the straits settlements',
+  'borneo': 'straits settlements',
+  'new south wales': 'the colony of new south wales',
+  'nsw': 'the colony of new south wales',
+  'kiribati': 'gilbert and Ellice Islands',
+  'tuvalu': 'gilbert and Ellice Islands',
+  'jordan': 'emirate of Transjordan',
+  'gambia': 'the colony and protectorate of gambia'
+}
+
+#update 1.5 release
+#https://uptimerobot.com/dashboard?ref=website-header#mainDashboard
+#https://discord-bot-main.lachlanorourke.repl.co
+#keep alive framework added
+#always on added
+
+#update 1.7
+# quiz added
+# update 1.7.1
+# Quiz fixed
+
+@bot.tree.command(name="quiz")
+async def quiz(interaction: discord.Interaction):
+  questions_and_answers = {
+  "what is the capital of the uk": "london",
+  "what is the name of the current US president": "joe biden",
+  "what is the chemical formula for water": "h2O",
+  "what year did ww2 start": "1939",
+  "where was the nuclear bomb originally intended to be dropped on": "germany",
+  "who was the prime minister after boris johnson": "liz truss",
+  "who shat his pants at an engadine mc donalds in 1997": "scott morrison",
+  "which company owns minecraft": ["mojang", "microsoft"],
+  "which video game has 3 main protaganists that go by the name of micheal de santa, trevor phillps and franklin clinton": ["gta 5", "gta v"],
+  "which home alone 2 background character turned us president got arrested": "trump",
+  "What american state is known for incest?": "alabama",
+  "what is the kool kids klub also known as": "kkk",
+  "which company sent pinkertons to raid a youtubers house because they got magic the gathering cards early": "hazbro",
+  "which game on Steam has a similar name to sum in space": "cum in space",
+  "what happened to the jar in 1 guy one 1 jar": "it broke",
+  "what game was release by a german chancellor that is in the collection called the furer bundle": "sex with hitler",
+  "whats your favourite sex position": "missionary",
+  "what do you do in the evenings": ["wank", "drink yourself to sleep", "hurt yourself"],
+  "whos the best adult movie star": "johnny sins",
+  "what does Rascam do on the holidays": "his sister",
+  "have you done your homework": ["yes","no",],
+      
+  }
+
+  question, answers = random.choice(list(questions_and_answers.items()))
+
+  await interaction.response.send_message(question)
+
+  #user_answer = await bot.wait_for("message", check=lambda message: message.author == interaction.user)
+  #made it so any user can answer, this may be removed though
+  user_answer = await bot.wait_for("message")
+
+  if isinstance(answers, str):
+    if user_answer.content.lower() == answers.lower():
+        await interaction.channel.send("correct!")
+    else:
+        await interaction.channel.send(f"{user_answer.content} is incorrect. The correct answer is: {answers}")
+  elif isinstance(answers, list):
+    if user_answer.content.lower() in map(str.lower, answers):
+        await interaction.channel.send("correct!")
+    else:
+      correct_answers = ", ".join(answers)
+      await interaction.channel.send(f"{user_answer.content} is incorrect. The correct answers are: {correct_answers}")
+
+  else:
+    await interaction.channel.send("Error has occured")
+
+
+
+#update 1.6
+#more commands added
+#financial tips moved to random selection
+
+@bot.tree.command(name="never-back-down-never-what")
+async def creator(interaction: discord.Interaction):
+  await interaction.response.send_message("never give up")
+
+
+#update 1.8
+#different type of commands available
+#more finacial tips added
+# financial tips moved to random 
+
+@bot.command()
+async def examplecommand(ctx):
+  await ctx.send("This is an alternative legacy command")
+
+
+
+#update 1.9 
+#adding a fun facts section
+
+@bot.tree.command(name="facts")
+async def quiz(interaction: discord.Interaction):
+  facts = [
+          "did you know that the population of the earth is about 8 billion people?",
+    "The world's deepest point is the Mariana Trench, which is over 11 kilometers deep.",
+    "The sun is about 149.6 million kilometers from Earth.",
+    "The human brain contains about 100 billion neurons.",
+    "The average person blinks about 15 times per minute.",
+  'who invented math and why did they add number',
+    'is there life after death',
+    'who decided whats right or wrong',
+    'what is a god',
+    'what age should people stop dreaming',
+    'how do we know were real',
+    'what series of decisions led up to this exact point',
+  'why do we exist',
+  'what is the meaning of life',
+  'do our human accomplishments have a long-term, universal significance, or when the world ends, do we all end with it, including what we’ve achieved',
+  'if you punch yourself and it hurts, are you wear or are you strong',
+  'if you took a ship and replaced all of its parts until none of the original parts are intact anymore, is it the same ship or a completely different ship',
+  'what shape is your field of vision',
+  'isn’t good health just a slower rate at which to die',
+  'What do they call french kissing in France',
+    'every year, over 8 million people die from hunger',
+    'there are more slaves to day that at any other point in history',
+    '1 in 3 women will experience physical or sexual violence in their lifetime',
+    'over 1 million childeren die from malaria every year',
+    'the world is facing a biodiversity crisis with millions of species of plants and animals risking extinction',
+    'The longest place name in the world is Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu, which is a hill in New Zealand. It translates to The summit where Tamatea, the man with the big knees, who slid, climbed up and swallowed the mountains, known as the land of the wind, played his flute to his loved one.',
+    'The world oldest peice of chewing gum is 9,000 years old and found in a cave in swede,',
+    'The largest snowflake ever recorded was 15 inches wide and 8 inches thick. it was found in montana usa in 1887',
+    "The Earl of Sandwich, John Montagu, who lived in the 1700s, reportedly invented the sandwich so he wouldn’t have to leave his gambling table to eat.",
+    "The Four Corners is the only spot in the US where you can stand in four states at once: Utah, Colorado, Arizona and New Mexico.",
+    "parts of Canada are south of Detroit",
+    "Bats are the only mammal that can actually fly.",
+    "Wombats are the only animal whose poop is cube-shaped. This is due to how its intestines form the feces. The animals then stack the cubes to mark their territory.",
+    "For comparison, an elephant's heart weighs around 30 pounds. And a human heart? A mere 10 ounces.",
+      
+    
+    
+    
+             ]
+             
+  fact = random.choice(facts)
+  await interaction.response.send_message(fact)
+  def setup(bot: commands.Bot):
+    bot.add_command(FactCommand())
+
+#update 1.10
+#making finacial tips a random selection of tips
+
+@bot.tree.command(name="financial-tips")
+async def quiz(interaction: discord.Interaction):
+  tips = [ "you will never prove a flat earther wrong because they will just say nu-uh and keep lying like a 5 year-old todler",
+          "people saying they wouldnt eat any human no matter the circumstances are stupid because they clearly have never eaten pussy.",
+          "if 9/11 was an inside job then why didnt they get all the planes to hit their intended target",
+          "if incest is normal in alabama then what would being with a girl whose not related to you be called?",
+          "Lady Bugs are known to eat their own larvae to ensure the survival of the other larvae.",
+          "Just one frog has enough lethal poison in its skin to kill 10 to 15 people",
+          "The golden poison dart frog (Phyllobates terribilis) is the size of a paperclip, adorable, and can kill you with a single touch",
+          "would it be considered incest if you were sperated at birth by adoption and coinsidentally met up at a coffee shop in cincinatti and began a relationship, get engaged and at the wedding your adoptive birth parents remember eachother and then tell you the truth about the person youve grown to love and care about.",
+          "is it gay to sleep with a trans girl even if your drunk and got trick into going home with her but you low-key like it and keep her number (YES YES IT IS you like it)",
+          "sex is like the stock market you start slow and keep getting more and more invested until your all in",
+          "When you get a pay rise, the natural thing to do is direct all that increased disposable income towards upgrading your lifestyle.And while you should definitely reward yourself for your hard work, resist the urge to direct all that increased income to lifestyle.Mainly because if you establish that constant upgrade habit when you’re young, you’ll tend to keep going with that same habit when you get older. We’ve all heard stories from when the mining boom ended here in Perth of people who were making $300K a year, lost their job and somehow had zero savings to fall back on while they looked for a new one. And when they did get a new one, it was a lower-paying job that couldn’t support the lifestyle they were used to. Not fun. If you get in the habit now of only making small lifestyle upgrades with each increase in income,you’ll be setting yourself up beautifully for later in life." ,
+          "In your late teens and early twenties, it’s easier to save if you understand exactly what you are saving for. For most people in this age cohort, holidays, cars and house deposits are the main saving goals.Having those goals means your saving has a purpose and will make it easier to build that saving habit. Write down a number to target, rename the account to reflect your goal, and make sure to celebrate the achievement when you get there.",
+          "Just like buying a house, investing is a good idea but only at the right time for you. To get a proper return out of investing, you need to lock your cash away for a minimum of 5 years.  But if you really want to leverage the true power of investing (compound interest), 10+ years is a better time commitment.  I generally advise that people don’t invest cash until:They have bought a home or saved up enough for a 20 percent deposit, They have built a decent offset balance, They have set a trajectory for paying off their debt at a decent pace",
+          "I define ‘good debt’ as acceptable, unavoidable debt – things like a HECS debt, home loan or investment loan. All these debts deliver some level of long-term return: education or capital growth.Bad debt, on the other hand, usually sees you paying interest on things you might want, but don’t necessarily need. Almost all kinds of personal loans (credit cards, store cards, Afterpay, and most car loans) fall in this category If you’re going to commit to a bad form of debt, commit only if you truly need the thing, have no other choice, and where possible, can pay it off relatively quickly.",
+          'No matter how much or how little you are paid, you may find it difficult to get ahead if you spend more than you earn. Prudent cuts to your spending can result in big savings.',
+          'A budget will show where your money is going.  Depending on when you are paid, you may decide on a weekly, fortnightly or monthly budget. You need a budget regardless of how much you earn a year.',
+          'Credit card debt can be a big obstacle to improving your finances.',
+          'If you want to boost your savings, you can set aside a minimum of five to 10% of your salary for savings.',
+          'If you contribute to super and a savings account, and you still have some spare money, then you may want to consider putting it into other investments.',
+                
+
+
+
+          
+             ]
+  
+  
+             
+  tips = random.choice(tips)
+  await interaction.response.send_message(tips)
+  def setup(bot: commands.Bot):
+    bot.add_command(FactCommand())
+
+#update 1.10.1
+  #added more finacial tips
+  #added more fun facts
+
+  #update 1.10.2
+  #added framework for plazma.live added currently not functional
+  #added more fun facts
+
+#update 1.11
+#new bots merged into one 
+#bots include plasma.bot to be merged
+#plazma bot now included in main segment
+
+@bot.event
+async def on_message(message):
+    username = str(message.author).split("#")[0]
+    try:
+        channel = str(message.channel.name)
+    except AttributeError:
+        channel = str(message.channel)
+    user_message = str(message.content)
+
+    print(f"Message {user_message} by {username} on {channel}")
+
+    user_message = user_message.lower()
+    if message.author == bot.user:
+        return
+    if user_message == "hello":
+        await message.channel.send("Henlo!")
+
+    elif user_message == "ping":
+        await message.channel.send("pong")
+    elif user_message == "pong":
+        await message.channel.send("ping")
+    elif "crazy" in user_message:
+      await message.channel.send("Crazy!? I was crazy once! They Locked me in a room. A rubber room.A rubber room with rats. And rats make me crazy!")#henlo josh a: e, what do you, oh, rats! Crazy!? I was crazy once!
+    elif user_message == "e":
+        await message.channel.send("e")
+        #while True:
+        #    await message.channel.send("UwU")
+    # Check if the message contains the name of a former British colony
+    elif message.content in former_british_colonies:
+        # Get the colonial name of the country
+        colonial_name = former_british_colonies[message.content.lower()]
+
+        # Reply with the colonial name
+        await message.reply(f'The colonial name of {message.content} is {colonial_name}')
+    elif user_message == "help":
+        view = Help()
+        await message.reply("Click a button to get started!", view=view)
+
+    elif "c++" in user_message:
+        user_message = user_message.replace("c++ ", "")
+        user_message = user_message.replace("c++", "")
+        user_message = user_message.replace("```", "")
+        user_message = user_message.replace("“", '"')
+        user_message = user_message.replace("”", '"')
+        user_message = user_message.replace("‘", "'")
+        user_message = user_message.replace("’", "'")
+
+        with open("code.cpp", "w") as file:
+            file.write(user_message)
+        await message.channel.send("Compiling...")
+        await bot.change_presence(
+            activity=discord.Game(name="Compiling..."),
+            status=discord.Status.dnd)
+        response = utils.compile_cpp()
+        response = f"`Plazma C++ Code Compilation:`\n```{response}```"
+        try:
+            await message.channel.send(response)
+        except discord.errors.HTTPException:
+            with open("output.txt", "w") as file:
+                file.write(response)
+            await message.channel.send(file=discord.File("output.txt"))
+        await bot.change_presence(activity=discord.Game(name="Plazma"),
+                                     status=discord.Status.online)
+
+    elif "python" in user_message:
+        user_message = user_message.replace("python ", "")
+        user_message = user_message.replace("python", "")
+        user_message = user_message.replace("“", '"')
+        user_message = user_message.replace("”", '"')
+        user_message = user_message.replace("‘", "'")
+        user_message = user_message.replace("’", "'")
+
+        with open("code.py", "w") as file:
+            file.write(user_message)
+        await message.channel.send("Compiling...")
+        try:
+            await bot.change_presence(
+                activity=discord.Game(name="Compiling..."),
+                status=discord.Status.dnd)
+            response = utils.compile_python()
+        except Exception as e:
+            response = str(e)
+        response = f"`Plazma Python Code Compilation:`\n```{response}```"
+        try:
+            await message.channel.send(response)
+        except discord.errors.HTTPException:
+            with open("output.txt", "w") as file:
+                file.write(response)
+            await message.channel.send(file=discord.File("output.txt"))
+        await bot.change_presence(activity=discord.Game(name="Plazma"),
+                                     status=discord.Status.online)
+
+    elif "tts" in user_message:
+        user = message.author
+        voice_channel = user.voice.channel
+        channel = None
+        if voice_channel != None and "file" not in user_message:
+            user_message = user_message.replace("tts ", "")
+            utils.speak(user_message)
+            channel = voice_channel.name
+
+            await message.channel.send(f"Playing *{user_message}* in {channel}"
+                                       )
+
+            vc = await voice_channel.connect()
+
+            source = discord.FFmpegOpusAudio("voice.mp3")
+
+            vc.play(source)
+
+            while vc.is_playing():
+                await asyncio.sleep(1)
+
+            vc.stop()
+            await vc.disconnect()
+        elif voice_channel != None and "file" in user_message:
+            user_message = user_message.replace("tts", "")
+            user_message = user_message.replace("file", "")
+            user_message = user_message.replace(" ", "")
+            file = open(user_message)
+            contents = ""
+            for line in file:
+                contents += line
+            try:
+                utils.speak(contents)
+            except RecursionError:
+                utils.speak("File too long.")
+            channel = voice_channel.name
+
+            await message.channel.send(f"Playing {user_message} in {channel}")
+
+            vc = await voice_channel.connect()
+
+            source = discord.FFmpegOpusAudio("voice.mp3")
+
+            vc.play(source)
+
+            while vc.is_playing():
+                await asyncio.sleep(1)
+
+            vc.stop()
+            await vc.disconnect()
+        else:
+            await message.channel.send(f"{username} is not in a voice channel."
+                                       )
+            
+    # plazma search engine
+    elif "search" in user_message.lower():
+        await message.channel.send("Searching...")
+        user_message = user_message.replace("search ", "")
+        response = requests.get(f"https://plazma-search-server.captaindeathead.repl.co/search?q={user_message}")
+        if response.status_code == 200:
+            # titles and links in json response
+            titles = []
+            links = []
+            images = []
+
+            for i in range(len(response.json()["links"])):
+                if "imgurl" in response.json()["links"][i]:
+                    continue
+                try:
+                    if titles[i] == None:
+                        titleResponse = requests.get(f"https://plazma-search-server.captaindeathead.repl.co/getTitle?url={response.json()['links'][i]}")
+                        if titleResponse.status_code == 200:
+                            titles[i] = titleResponse.json()["title"]
+                    titles.append(response.json())
+                except IndexError:
+                    titles.append("No title found.")
+                    titleResponse = requests.get(f"https://plazma-search-server.captaindeathead.repl.co/getTitle?url={response.json()['links'][i]}")
+                    if titleResponse.status_code == 200:
+                        titles[i] = titleResponse.json()
+                try:
+                    links.append(response.json()["links"][i])
+                except IndexError:
+                    links.append("No link found.")
+
+            # create embed
+            embed = discord.Embed(title=f"Search results for {user_message}", color=0x00ff00)
+            for i in range(len(titles)):
+                embed.add_field(name=titles[i], value=links[i], inline=False)
+            await message.channel.send(embed=embed)
+        else:
+            await message.channel.send("Error: Search engine is down or a network error occured.")
+
+    # check if the message includes "number_guess" and a mention
+    elif "number_guess" in user_message and message.mentions:
+        number = random.randint(1, 10)
+        await message.channel.send(
+            f"Guess a number between 1 and 10, {username}!")
+        guess = await bot.wait_for(
+            "message", check=lambda message: message.author == message.author)
+        if int(guess.content) == number:
+            await message.channel.send(f"Correct, {username}!")
+        else:
+            await message.channel.send(
+                f"Wrong, {username}! The number was {number}.")
+        await message.channel.send(f"Thanks for playing, {username}!")
+        # ping the mentioned user to guess the number
+        await message.channel.send(
+            f"{message.mentions[0].mention} guess a number between 1 and 10!")
+        number = random.randint(1, 10)
+        # wait for the mentioned user to guess the number
+        guess1 = await bot.wait_for(
+            "message",
+            check=lambda message: message.author == message.mentions)
+        if int(guess1.content) == number:
+            await message.channel.send(
+                f"Correct, {message.mentions[0].mention}!")
+        else:
+            await message.channel.send(
+                f"Wrong, {message.mentions[0].mention}! The number was {number}."
+            )
+        await message.channel.send(
+            f"Thanks for playing, {message.mentions[0].mention}!")
+
+    elif "chess" in user_message:
+        channel = message.channel
+        if message.mentions:
+            board = chess.Board()
+            black = message.mentions[0]
+            white = message.author
+            await message.channel.send(
+                f"{black.mention} is black and {white.mention} is white.")
+            await message.channel.send(f"{white.mention} starts.")
+            # draw the letters
+            readable_board = (
+                "  a  b  c  d  e  f  g  h\n8 " + board.unicode()[0:16] + "7 " +
+                board.unicode()[16:32] + "6 " + board.unicode()[32:48] + "5 " +
+                board.unicode()[48:64] + "4 " + board.unicode()[64:80] + "3 " +
+                board.unicode()[80:96] + "2 " + board.unicode()[96:112] +
+                "1 " + board.unicode()[112:128])
+            await message.channel.send(f"```{readable_board}```")
+            while not board.is_game_over():
+                if board.turn == chess.WHITE:
+                    await message.channel.send(
+                        f"{white.mention} select a piece to move. (exit to cancel move)"
+                    )
+                    piece = await bot.wait_for(
+                        "message",
+                        check=lambda message: message.author == white and
+                        message.channel == channel,
+                    )
+                    if piece.content == "exit":
+                        await message.channel.send("Move cancelled.")
+                        break
+                    else:
+                        await message.channel.send(
+                            f"{white.mention} select a square to move to. (exit to cancel move)"
+                        )
+                        square = await bot.wait_for(
+                            "message",
+                            check=lambda message: message.author == white and
+                            message.channel == channel,
+                        )
+                        if square.content == "exit":
+                            await message.channel.send("Move cancelled.")
+                            continue
+                        else:
+                            try:
+                                board.push_san(
+                                    f"{piece.content}{square.content}")
+                            except ValueError:
+                                await message.channel.send(
+                                    "That is not a valid move.")
+                            # draw the letters
+                            readable_board = ("  a  b  c  d  e  f  g  h\n8 " +
+                                              board.unicode()[0:16] + "7 " +
+                                              board.unicode()[16:32] + "6 " +
+                                              board.unicode()[32:48] + "5 " +
+                                              board.unicode()[48:64] + "4 " +
+                                              board.unicode()[64:80] + "3 " +
+                                              board.unicode()[80:96] + "2 " +
+                                              board.unicode()[96:112] + "1 " +
+                                              board.unicode()[112:128])
+                            await message.channel.send(
+                                f"```{readable_board}```")
+                else:
+                    await message.channel.send(
+                        f"{black.mention} select a piece to move. (exit to cancel move)"
+                    )
+                    piece = await bot.wait_for(
+                        "message",
+                        check=lambda message: message.author == black and
+                        message.channel == channel,
+                    )
+                    if piece.content == "exit":
+                        await message.channel.send("Move cancelled.")
+                        break
+                    else:
+                        await message.channel.send(
+                            f"{black.mention} select a square to move to. (exit to cancel move)"
+                        )
+                        square = await bot.wait_for(
+                            "message",
+                            check=lambda message: message.author == black and
+                            message.channel == channel,
+                        )
+                        if square.content == "exit":
+                            await message.channel.send("Move cancelled.")
+                            continue
+                        else:
+                            try:
+                                board.push_san(
+                                    f"{piece.content}{square.content}")
+                            except ValueError:
+                                await message.channel.send(
+                                    "That is not a valid move.")
+                            # draw the letters
+                            readable_board = ("  a  b  c  d  e  f  g  h\n8 " +
+                                              board.unicode()[0:16] + "7 " +
+                                              board.unicode()[16:32] + "6 " +
+                                              board.unicode()[32:48] + "5 " +
+                                              board.unicode()[48:64] + "4 " +
+                                              board.unicode()[64:80] + "3 " +
+                                              board.unicode()[80:96] + "2 " +
+                                              board.unicode()[96:112] + "1 " +
+                                              board.unicode()[112:128])
+                            await message.channel.send(
+                                f"```{readable_board}```")
+
+        else:
+            depth = 3
+            board = chess.Board()
+            moves_played = 0
+            white = "Plazma Chess Engine"
+            black = message.author
+            await message.channel.send(f"{message.author.mention} is black.")
+            await message.channel.send(f"Plazma Chess Engine is white.")
+            await message.channel.send(f"{message.author.mention} starts.")
+            await message.channel.send(
+                f"Please enter a depth for the engine to search to (2 - 5 is recommended). (exit to cancel game)"
+            )
+            depth = await bot.wait_for(
+                "message",
+                check=lambda message: message.author == black and message.
+                channel == channel,
+            )
+            # draw the letters
+            readable_board = (
+                "  a  b  c  d  e  f  g  h\n8 " + board.unicode()[0:16] + "7 " +
+                board.unicode()[16:32] + "6 " + board.unicode()[32:48] + "5 " +
+                board.unicode()[48:64] + "4 " + board.unicode()[64:80] + "3 " +
+                board.unicode()[80:96] + "2 " + board.unicode()[96:112] +
+                "1 " + board.unicode()[112:128])
+            await message.channel.send(f"```{readable_board}```")
+            while not board.is_game_over():
+                if board.turn == chess.WHITE:
+                    await message.channel.send(
+                        f"Plazma Chess Engine is thinking...")
+                    engine_move, moves_played = engine.process(
+                        board, "black", moves_played, int(depth.content))
+                    print(engine_move)
+                    board.push(engine_move)
+                    # draw the letters
+                    readable_board = ("  a  b  c  d  e  f  g  h\n8 " +
+                                      board.unicode()[0:16] + "7 " +
+                                      board.unicode()[16:32] + "6 " +
+                                      board.unicode()[32:48] + "5 " +
+                                      board.unicode()[48:64] + "4 " +
+                                      board.unicode()[64:80] + "3 " +
+                                      board.unicode()[80:96] + "2 " +
+                                      board.unicode()[96:112] + "1 " +
+                                      board.unicode()[112:128])
+                    await message.channel.send(f"```{readable_board}```")
+                else:
+                    await message.channel.send(
+                        f"{message.author.mention} select a piece to move. (exit to cancel move)"
+                    )
+                    piece = await bot.wait_for(
+                        "message",
+                        check=lambda message: message.author == black and
+                        message.channel == channel,
+                    )
+                    if piece.content == "exit":
+                        await message.channel.send("Move cancelled.")
+                        break
+                    else:
+                        await message.channel.send(
+                            f"{message.author.mention} select a square to move to. (exit to cancel move)"
+                        )
+                        square = await bot.wait_for(
+                            "message",
+                            check=lambda message: message.author == black and
+                            message.channel == channel,
+                        )
+                        if square.content == "exit":
+                            await message.channel.send("Move cancelled.")
+                            continue
+                        else:
+                            try:
+                                board.push_san(
+                                    f"{piece.content}{square.content}")
+                            except ValueError:
+                                await message.channel.send(
+                                    "That is not a valid move.")
+                            # draw the letters
+                            readable_board = ("  a  b  c  d  e  f  g  h\n8 " +
+                                              board.unicode()[0:16] + "7 " +
+                                              board.unicode()[16:32] + "6 " +
+                                              board.unicode()[32:48] + "5 " +
+                                              board.unicode()[48:64] + "4 " +
+                                              board.unicode()[64:80] + "3 " +
+                                              board.unicode()[80:96] + "2 " +
+                                              board.unicode()[96:112] + "1 " +
+                                              board.unicode()[112:128])
+                            await message.channel.send(
+                                f"```{readable_board}```")
+
+            if board.is_checkmate():
+                await message.channel.send(f"Checkmate! {board.turn} wins!")
+            elif board.is_stalemate():
+                await message.channel.send("Stalemate!")
+            elif board.is_insufficient_material():
+                await message.channel.send("Draw!")
+            elif board.is_seventyfive_moves():
+                await message.channel.send("Draw!")
+            elif board.is_fivefold_repetition():
+                await message.channel.send("Draw!")
+            else:
+                await message.channel.send("Draw!")
+
+    elif "menu" in user_message:
+        view = Menu()
+        await message.reply("Click a button to get started!", view=view)
+    await bot.process_commands(message)
+
+
+class Menu(discord.ui.View):
+
+    def __init__(self):
+        super().__init__()
+        self.value = None
+
+    @discord.ui.button(label="Children", style=discord.ButtonStyle.blurple)
+    async def children(self, interaction: discord.Interaction,
+                       button: discord.ui.Button):
+        embed = discord.Embed(
+            title="Children",
+            description="Children are people under the age of 18.",
+            color=discord.Color.random(),
+        )
+        embed.add_field(
+            name="Children",
+            value="Children are people under the age of 18.",
+            inline=False,
+        )
+        embed.add_field(
+            name="Not Children",
+            value="Not Children are people over the age of 18.",
+            inline=False,
+        )
+        embed.set_footer(text="Plazma")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+    @discord.ui.button(label="Not Children", style=discord.ButtonStyle.blurple)
+    async def not_children(self, interaction: discord.Interaction,
+                           button: discord.ui.Button):
+        embed = discord.Embed(
+            title="Not Children",
+            description="Not Children are people over the age of 18.",
+            color=discord.Color.random(),
+        )
+        embed.add_field(
+            name="Children",
+            value="Children are people under the age of 18.",
+            inline=False,
+        )
+        embed.add_field(
+            name="Not Children",
+            value="Not Children are people over the age of 18.",
+            inline=False,
+        )
+        embed.set_footer(text="Plazma")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
+class Help(discord.ui.View):
+
+    def __init__(self):
+        super().__init__()
+        self.value = None
+
+    @discord.ui.button(label="Commands", style=discord.ButtonStyle.blurple)
+    async def commands(self, interaction: discord.Interaction,
+                       button: discord.ui.Button):
+        embed = discord.Embed(
+            title="Plazma Commands:",
+            description=(
+                "`help` - Shows this message.\n"
+                "`ping` - Pong!\n"
+                "`pong` - Ping!\n"
+                "`e` - e\n"
+                "`tts` - Text to speech.\n"
+                "`number_guess` - Guess a number between 1 and 10.\n"
+                "`chess` - Play chess against Plazma or another user.\n"
+                "`c++` - Compile C++ code.\n"
+                "`python` - Compile Python code."),
+            color=discord.Color.random(),
+        )
+        embed.set_footer(text="Plazma")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+    @discord.ui.button(label="C++ Compilation Guide",
+                       style=discord.ButtonStyle.blurple)
+    async def cpp(self, interaction: discord.Interaction,
+                  button: discord.ui.Button):
+        embed = discord.Embed(
+            title="C++ Compilation Guide",
+            description=
+            ("To compile C++ code, type 'c++ ' followed by your code.\n\n"
+             "You can also use code blocks after the 'c++ ' keyword to make your code look nicer.\n\n"
+             " - If you use code blocks, make sure to type 'c++' after the '```' followed by a new line to add syntax highlighting.\n\n"
+             "Once you have typed your code, I will compile it and send the output.\n\n"
+             "I will also prompt you for input if your program requires it. "
+             "If you want to cancel the input prompt, but continue the program, type 'exit'.\n\n"
+             "Otherwise, type your input and I will send the output."),
+            color=discord.Color.random(),
+        )
+        embed.set_footer(text="Plazma C++ Compilation Guide")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+    @discord.ui.button(label="Python Compilation Guide",
+                       style=discord.ButtonStyle.blurple)
+    async def python(self, interaction: discord.Interaction,
+                     button: discord.ui.Button):
+        embed = discord.Embed(
+            title="Python Compilation Guide",
+            description=
+            ("To compile Python code, type 'python ' followed by your code.\n\n"
+             "You can also use code blocks after the 'python ' keyword to make your code look nicer.\n\n"
+             " - If you use code blocks, make sure to type 'python' after the '```' followed by a new line to add syntax highlighting.\n\n"
+             "Once you have typed your code, I will compile it and send the output.\n\n"
+             "I will also prompt you for input if your program requires it.\n\n"
+             "If you want to cancel the input prompt, but continue the program, type 'exit'.\n\n"
+             "Otherwise, type your input and I will send the output."),
+            color=discord.Color.random(),
+        )
+        embed.set_footer(text="Plazma Python Compilation Guide")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+    @discord.ui.button(label="Chess Guide", style=discord.ButtonStyle.blurple)
+    async def chess(self, interaction: discord.Interaction,
+                    button: discord.ui.Button):
+        embed = discord.Embed(
+            title="Chess Guide",
+            description=
+            ("VS Plazma:\n\n"
+             " - I will prompt you for a depth for the engine to search to. 2 - 5 is recommended.\n\n"
+             " - Once you have entered a depth, I will start the game.\n\n"
+             " - To make a move, type the piece you want to move, followed by the square you want to move to.\n\n"
+             " - For example, if you want to move the pawn at e2 to e4, type 'e2' then when I prompt you, type 'e4'.\n\n"
+             " - I will then make a move, and you will make a move, and so on.\n\n"
+             " - If you want to cancel a move, type 'exit'.\n\n"
+             " - If you want to cancel the game, type 'exit' when I prompt you to select a piece to move.\n\n"
+             "VS Another User:\n\n"
+             " - Mention the user you want to play against.\n\n"
+             " - I will then prompt you for a piece to move, and a square to move to.\n\n"
+             " - If you want to cancel a move, type 'exit'.\n\n"
+             " - If you want to cancel the game, type 'exit' when I prompt you to select a piece to move.\n\n"
+             " - The other player will then make a move, and you will make a move, and so on."
+             ),
+            color=discord.Color.random(),
+        )
+        embed.set_footer(text="Plazma Chess Guide")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+    @discord.ui.button(label="About", style=discord.ButtonStyle.blurple)
+    async def about(self, interaction: discord.Interaction,
+                    button: discord.ui.Button):
+        embed = discord.Embed(
+            title="About Plazma",
+            description="Plazma is a Discord bot made by CaptainDeathead and Osama Bin collection. helped by Yesnt",
+            color=discord.Color.random(),
+        )
+        embed.set_footer(text="Plazma")
+        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
+#soundboard command
+class sndmen(discord.ui.View):
+    def __init__(self):
+        super().__init__()
+        self.value = None
+
+    @discord.ui.button(label="Megalovania", style=discord.ButtonStyle.blurple)
+    async def megalovania(self, interaction: discord.Interaction,
+                       button: discord.ui.Button):
+      user = interaction.user
+      user_message = interaction.message   # bruh, why are you adding this, isnt it in your bot
+      voice_channel = user.voice.channel #e
+      channel = None
+      if voice_channel is not None:
+          # File playback code block
+          await interaction.send(f"Playing soundboard item in {voice_channel.name}")
+          vc = await voice_channel.connect()
+          source = discord.FFmpegOpusAudio("megalovania.wav")
+          vc.play(source)
+      else:
+          await interaction.send("You are not in a voice channel.")
+
+@bot.tree.command(name="soundboard")
+async def soundboard(interaction: discord.Interaction):
+    view = sndmen()
+    await interaction.response.send_message("Yej", view=view)
+
+
+#added magic 8 ball command 
+# added roast command
+
+PFuture = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "**E!**", "Reply hazy, try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don’t count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"]
+ROptions = ["If you were spice, you'd be flour", "There's no one in this world like you. Or at least I hope so", "I'd like to roast you, but it looks like your genetics already did", "I didn't hear you. I'm busy ignoring an annoying person", "You should photoshop your life with better decisions.", "You look like a before picture.", "I'd like to roast you, but i'm too busy judging your choices", "The only way you could get laid is if you crawled up a chicken's ass and waited.", "Your face is so oily that I'm suprised America hasn't invaded yet", "You're not good looking enough to be a model, but you're not smart enough to be anything else", "Did you forget to wipe or is that your natural scent?", "Sorry. I'm on the toilet and I can only deal with one shit at a time", "It's a parent's job to raise their children right. So looking at you, it's no wonder your dad quit after just one day.", "You might just be why the middle finger was invented in the first place", "You do realise we are just tolerating you, right?", "If I had a dollar every time you shut up, I would give it back as a thank you", "It's impossible to underestimate you", "You're the reason gene pools need lifeguards", "You're like the gray sprinkle on a rainbow cupcake", "Have you ever tried not being an idiot", "You're the human version of athlete's foot: annoying and hard to get rid of", "You were so happy about getting negitive for covid... we didn't have the heart to tell you it was actually an IQ test", "We were going to roast you, but burning trash is apparently an environmental hazard", "Everyone has a purpose in life, and your's is to become an organ donor", "You can be anything you want, except good looking", "Don't feel bad, don't feel blue, Frankenstein was ugly too", "I'm the type of person to laugh at mistakes, so sorry if I laughed at your face"]
+
+@bot.tree.command(name="8ball")
+async def ball(interaction: discord.Interaction, *, question: str):
+  await interaction.response.send_message()
+  predict53 = random.choice(PFuture)
+  await interaction.response.send_message(predict53)
+
+@bot.tree.command(name="roast")
+async def suscrystals(interaction: discord.Interaction, *, target: discord.User):
+    await interaction.response.send_message(f"**Fronk bot roasted {target.mention}**")
+    predict53 = random.choice(ROptions)
+    await interaction.channel.send(predict53)
+
+
+
+#update 1.12
+#added a code that tells time to be added later
+#reminders bot that reminds you of things
+#more commands added
+
+@bot.tree.command(name="time")
+async def time(interaction: discord.Interaction):
+    auzTime = pytz.timezone('Australia/Perth')
+    # niceAuzTime converts to 12 hour time with AM/PM
+    niceAuzTime = datetime.datetime.now(auzTime).strftime('%I:%M %p')
+    await interaction.response.send_message(f"The time is {niceAuzTime} in Western Australia")
+
+@bot.tree.command(name="remind")
+async def remind(interaction: discord.Interaction, *, reminder: str, mins: str, author: discord.User):
+    await interaction.response.send_message(f"Reminder set for {mins} mins from now")
+    await asyncio.sleep(int(mins)*60)
+    await interaction.channel.send(f"Reminder for {author.mention}: {reminder}")
+
+
+
+#added urban dictionary
+async def get_definition(word, count):
+  url = f"http://api.urbandictionary.com/v0/define?term={word}"
+  response = requests.get(url)
+  data = response.json()
+  if not data['list']:
+    return f"No definition found for {word}"
+  else:
+    return data['list'][count]['definition']
+
+@bot.tree.command(name="urbandictionary")
+async def urban(interaction: discord.Interaction, word: str, count: int = 1):
+  definition = await get_definition(word, count - 1)
+  await interaction.response.send_message(f"The definition of {word} is {definition}")
+
+#update 1.12.1 
+#moving slash commands to same area
+
+#update 6.69.3
+#music functionality
+async def node_connect():
+  await bot.wait_until_ready()
+  node = wavelink.Node(uri='lavalink.devamop.in:443',
+                       password='DevamOP',
+                       secure=True)
+  await wavelink.NodePool.connect(client=bot, nodes=[node])
+  print("Connected to node successful")
+
+
+keep_alive()  
+bot.run(os.getenv("TOKEN"))
+#Copyright (c) 2023 Something231, CaptainDeathead, LachlanORourke 
+```
